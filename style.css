@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: white;
-  zoom: 200%;
+  zoom: 150%;
 }
 canvas {
   display: block;
