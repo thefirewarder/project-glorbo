@@ -1,0 +1,39 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+canvas {
+  display: block;
+}
+h1{
+  text-align: center;
+}
+#p2{
+  position: absolute;
+  left: 525px;
+  top: 75px;
+  text-align: right;
+}
+#p1 input{
+  width: 30px;
+}
+#challenger{
+  width: 75px;
+}
+#hp, #ascent, #surges, #penalty1{
+  width: 30px;
+}
+#general{
+  position: absolute;
+  top: 75px;
+  left: 250px;
+  display: flex;
+  gap: 10px;
+}
+
+#general input{
+  margin-top: 20px;
+ width: 30px;
+  height: 20px;
+}
