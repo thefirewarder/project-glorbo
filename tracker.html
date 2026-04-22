@@ -3,9 +3,88 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
-
   </head>
   <body>
+    <style>
+      html,body{
+        background-color: #ddd;
+          margin: 0;
+  padding: 0;
+      }
+canvas {
+  display: block;
+}
+h1{
+  text-align: center;
+}
+#p2{
+  position: absolute;
+  left: 525px;
+  top: 75px;
+  text-align: right;
+}
+#p1 input{
+  width: 30px;
+}
+#challenger{
+  width: 75px;
+}
+#hp, #ascent, #surges, #penalty1{
+  width: 30px;
+}
+#general{
+  position: absolute;
+  top: 75px;
+  left: 250px;
+  display: flex;
+  gap: 10px;
+}
+
+#general input{
+  margin-top: 20px;
+ width: 30px;
+  height: 20px;
+}
+
+    </style>
+    <script>
+      const rInput = document.getElementById("rInput")
+const cBoard = document.getElementById("cBoard")
+rInput.addEventListener("change",updateCutoff,false)
+let cutoff = null
+function updateCutoff(){
+  const round = parseInt(rInput.value)
+  let cutoffBase = null
+  switch(round % 3){
+    case 1:
+    if(round === 1){
+      cutoff = "L"
+    }
+    else{
+      cutoff = ((Math.floor(round/3))+1)+"L"
+    }
+    break
+    case 2:
+    if(round === 2){
+    cutoff = "W - 2"
+    }
+    else{
+      cutoff = ((Math.floor(round / 3))+1)+"W - 2"
+    }
+    break
+    default:
+    if(round === 3){
+    cutoff = "2D"
+    }
+    else{
+      cutoff = ((round/3)+1)+"D"
+    }
+    break
+  }
+  cBoard.innerHTML = "("+cutoff+")"
+}
+updateCutoff()
+    </script>
     <h1>Round Tracker</h1>
     <div id="p1">
       <input type="text" value="Ben"><br>
