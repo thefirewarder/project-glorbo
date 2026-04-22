@@ -10,9 +10,10 @@
   <h1>Project: Glorbo: The Wesbite</h1>
   <h3>Your one stop shop for all things Project: Glorbo</h3><br>
   <div id="container">
-  <button onclick="track()">Round Tracker</button>
+  <button style="padding: 10px 0px;" onclick="track()">Round Tracker</button>
   <button onclick="keyref()">Keyword Reference</button>
-  <button onclick="form1()">Request Packs</button>
+  <button style="padding: 10px 0px;" onclick="form1()">Request Packs</button>
+  <button style="padding: 10px 0px;" onclick="lore()">Game Lore</button>
   </div>
   <style>
     body{
@@ -34,7 +35,7 @@
       button{
         width: 100px;
         border-radius: 15px;
-        background-color: #bbb
+        background-color: #bbb;
       }
       button:hover{
         background-color: #999
@@ -49,6 +50,9 @@
     }
     function form1(){
       location.href = "https://forms.gle/AhBkyy6vFyLSZNDV8"
+    }
+    function lore(){
+      location.href = "lore.html"
     }
   </script>
 </body>
