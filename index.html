@@ -11,6 +11,7 @@
   <h3>Your one stop shop for all things Project: Glorbo</h3>
   <div id="container">
   <button onclick="track()">Round Tracker</button>
+    <button onclick="keyref()">Keyword Reference</button>
   </div>
   <style>
     body{
@@ -21,6 +22,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 15px;
     }
     h1,h3{
       text-align: center;
@@ -29,6 +31,9 @@
   <script>
     function track(){
       location.href = "tracker.html"
+    }
+    function keyref(){
+      location.href = "reference.html"
     }
   </script>
 </body>
