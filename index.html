@@ -10,10 +10,11 @@
   <h1>Project: Glorbo: The Wesbite</h1>
   <h3>Your one stop shop for all things Project: Glorbo</h3><br>
   <div id="container">
-  <button style="padding: 10px 0px;" onclick="track()">Round Tracker</button>
+  <button onclick="track()">Round Tracker</button>
   <button onclick="keyref()">Keyword Reference</button>
-  <button style="padding: 10px 0px;" onclick="form1()">Request Packs</button>
+  <button onclick="form1()">Request Packs</button>
   <button style="padding: 10px 0px;" onclick="lore()">Game Lore</button>
+  <button onclick="openPack()">Open Pack</button>
   </div>
   <style>
     body{
@@ -25,6 +26,7 @@
       justify-content: center;
       align-items: center;
       gap: 15px;
+      flex-wrap: wrap;
     }
     h1,h3{
       text-align: center;
@@ -53,6 +55,9 @@
     }
     function lore(){
       location.href = "lore.html"
+    }
+    function openPack(){
+      locationhref = "packOpener.html"
     }
   </script>
 </body>
