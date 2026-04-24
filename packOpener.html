@@ -10,7 +10,7 @@
 </div>
  <style>
     body{
-      zoom:75%;
+      zoom: 75%;
       background-color: #ddd;
     }
     h1{
@@ -106,11 +106,20 @@ else{
     choice.push(mythics[Math.floor(Math.random()*mythics.length)]) 
 }
 
-for(const card of choice){
+let i = 0
+let interval1;
+
+function reveal(){
 const img = document.createElement("img")
-img.src = card
+img.src = choice[i]
 container.appendChild(img)
+i++
+if(i === 9){
+    clearInterval(interval1)
 }
+}
+
+interval1 = setInterval(reveal,400 + (i * 50))
 
 </script> 
 </body>
