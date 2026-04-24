@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Pack Opener</h1>
+<div id="container">
+</div>
+ <style>
+    body{
+      zoom: 100%;
+      background-color: #ddd;
+    }
+    h1{
+      text-align: center;
+    }
+    button{
+    width: 100px;
+    border-radius: 15px;
+    background-color: #bbb;
+    }
+    button:hover{
+    background-color: #999
+    }
+    #container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
+<script>
+const container = document.getElementById("container")
+
+const commons = [
+"images/blacksmith.png",
+"images/bullet_train.png",
+"images/captain.png",
+"images/conqueror.png",
+"images/corporal.png",
+"images/demolish.png",
+"images/destroy.png",
+"images/divine_intervention.png",
+"images/fallen_angel.png",
+"images/fighter_jet.png",
+"images/flying_angel.png",
+"images/graceful_angel.png",
+"images/lookout.png",
+"images/morale_boost.png",
+"images/opposite_day.png",
+"images/recruit.png",
+"images/revolutionary.png",
+"images/sergeant.png",
+"images/slow_time.png",
+"images/sonic_swordsman.png",
+"images/spiky_demon.png",
+"images/time_bomb.png",
+"images/wizard.png"
+]
+
+ const uncommons = [
+  "images/aircraft_carrier.png", 
+  "images/bomber_plane.png",
+  "images/ceasefire.png",
+  "images/colonel.png",
+  "images/counter.png",
+  "images/fever_dream.png",
+  "images/hidden_sniper.png",
+  "images/special_forces_officer.png",
+  "images/vampire_bite.png"
+ ]
+
+ const rares = [
+  "images/general.png",
+  "images/janitor.png",
+  "images/lifesteal.png",
+  "images/nuke.png",
+  "images/obliterate.png",
+  "images/time_traveller.png"
+ ]
+
+ const mythics = [
+"images/boris.png",
+"images/glorbo_universe_devourer.png"
+ ]
+
+const choice = []
+
+for(let i = 0; i < 5; i++){
+    choice.push(commons[Math.floor(Math.random()*commons.length)])
+}
+for(let i = 0; i < 2; i++){
+    choice.push(uncommons[Math.floor(Math.random()*uncommons.length)])
+}
+choice.push(rares[Math.floor(Math.random()*rares.length)])
+
+const rand = Math.random()
+
+if(rand<0.7){
+    choice.push(rares[Math.floor(Math.random()*rares.length)])
+}
+else if(rand<0.9){
+    choice.push(uncommons[Math.floor(Math.random()*uncommons.length)]) 
+}
+else{
+    choice.push(mythics[Math.floor(Math.random()*mythics.length)]) 
+}
+
+for(const card of choice){
+const img = document.createElement("img")
+img.src = card
+container.appendChild(img)
+}
+
+</script> 
+</body>
+</html>
