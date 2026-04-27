@@ -49,9 +49,9 @@ h1{
     </style>
      <h1>Round Tracker</h1>
     <div id="p1">
-      <input type="text" value="Ben"><br>
+      <input type="text" value="Ben"><span id="fp1"></span><br>
       <span>Health:</span>
-      <input type="number" value="25"><br>
+      <input id="hp1" type="number" value="25"><br>
       <span>Ascent:</span>
       <input type="number" value="0"><br>
       <span>Surges:</span>
@@ -65,9 +65,9 @@ h1{
       <h2 id="cBoard">(L)</h2>
     </div>
     <div id="p2">
-      <input id="challenger" type="text" value=""><br>
+      <input id="challenger" type="text" value=""><span id="fp2"></span><br>
       <span>Health:</span>
-      <input id="hp" type="number" value="25"><br>
+      <input id="hp2" type="number" value="25"><br>
       <span>Ascent:</span>
       <input id="ascent" type="number" value="0"><br>
       <span>Surges:</span>
@@ -76,11 +76,27 @@ h1{
       <input id="penalty1" type="number" value="0"><br>
     </div>
     <script>
+      const fp1 = document.getElementById("fp1")
+      const fp2 = document.getElementById("fp2")
+      const hp1 = document.getElementById("hp1")
+      const hp2 = document.getElementById("hp2")
       const rInput = document.getElementById("rInput")
 const cBoard = document.getElementById("cBoard")
 rInput.addEventListener("change",updateCutoff,false)
 let cutoff = null
 function updateCutoff(){
+  if(hp1.value > hp2.value){
+    fp1.innerHTML = "(First Player)"
+  }
+  else if(hp1.value < hp2.value){
+    fp2.innerHTML = "(First Player)"
+  }
+  else if(Math.random() < 0.5){
+    fp1.innerHTML = "(First Player)"
+  }
+  else{
+    fp2.innerHTML = "(First Player)"
+  }
   const round = parseInt(rInput.value)
   let cutoffBase = null
   switch(round % 3){
