@@ -78,13 +78,15 @@ h1{
     <script>
       const fp1 = document.getElementById("fp1")
       const fp2 = document.getElementById("fp2")
-      const hp1 = parseInt(document.getElementById("hp1").value)
-      const hp2 = parseInt(document.getElementById("hp2").value)
+      let hp1 = parseInt(document.getElementById("hp1").value)
+      let hp2 = parseInt(document.getElementById("hp2").value)
       const rInput = document.getElementById("rInput")
 const cBoard = document.getElementById("cBoard")
 rInput.addEventListener("change",updateCutoff,false)
 let cutoff = null
 function updateCutoff(){
+  hp1 = parseInt(document.getElementById("hp1").value)
+  hp2 = parseInt(document.getElementById("hp2").value)
   if(hp1 > hp2){
     fp1.innerHTML = "(First Player)"
     fp2.innerHTML = ""
